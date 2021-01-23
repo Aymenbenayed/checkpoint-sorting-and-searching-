@@ -1,0 +1,24 @@
+ALGORITHM Insertion_Cards 
+VAR
+    i,j,aux : INTEGER;
+    cards: ARRAY_OF INTEGER
+BEGIN
+
+    REPEAT
+        Write("write the length of cards",cards.length)
+        Read(cards.length)
+        Write("Write the number of card",i);
+        Read(cards[i]);
+    UNTIL (cards[i]:=cards.length)               
+
+
+    FOR i FROM 1 TO cards.length-1 STEP 1  DO
+        aux := cards[i];
+        j:=i-1;
+        WHILE (j>=0 AND cards[j]>aux) DO
+            cards[j+1]=cards[j];
+            j:=j-1 ; 
+        END_WHILE
+        cards[j+1]=aux; 
+    END_FOR
+END
